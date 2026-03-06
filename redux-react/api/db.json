@@ -1,0 +1,8 @@
+{
+  "tasks": [
+    { "id": 1, "title": "Setup JSON Server", "status": "completed" },
+    { "id": 2, "title": "Build React Components", "status": "inprocess" },
+    { "id": 3, "title": "Review Code", "status": "onhold" }
+  ],
+  "users": [{ "id": 101, "name": "Alice" }]
+}

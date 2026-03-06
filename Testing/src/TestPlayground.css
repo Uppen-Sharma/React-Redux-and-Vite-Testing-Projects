@@ -1,0 +1,67 @@
+/* src/TestPlayground.css */
+.playground-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  border: 2px dashed #444; /* Dashed line to show it's a test area */
+  border-radius: 12px;
+  background-color: #1e1e1e;
+}
+
+.test-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #646cff;
+}
+h2 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Custom Button Styles for testing */
+button.secondary {
+  background-color: #555;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input Styles */
+input[type="text"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+}
+
+.alert-box {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(100, 108, 255, 0.2);
+  border: 1px solid #646cff;
+  border-radius: 4px;
+  color: #aaddff;
+}

@@ -1,0 +1,52 @@
+import "./App.css";
+import "./styles.css";
+import TicketReducer from "./reducers/TicketReducer";
+import TicketForm from "./components/TicketForm";
+import TicketList from "./components/TicketList";
+import { useReducer } from "react";
+import { sortTickets } from "./utilities/sortingUtilities";
+
+function App() {
+  const initialState = {
+    tickets: [],
+    editingTicket: null,
+    sortPreference: "High to Low",
+  };
+
+  const [state, dispatch] = useReducer(TicketReducer, initialState);
+
+  const sortedTickets = sortTickets(state.tickets, state.sortPreference);
+
+  return (
+    <div className="App">
+      <div className="container">
+        <h1>Bug Blaster</h1>
+
+        <TicketForm dispatch={dispatch} editingTicket={state.editingTicket} />
+
+        {state.tickets.length > 0 && (
+          <div className="results">
+            <h2>All Tickets</h2>
+
+            <select
+              value={state.sortPreference}
+              onChange={(e) =>
+                dispatch({ type: "SET_SORTING", payload: e.target.value })
+              }
+            >
+              <option value={"High to Low"}>High To Low</option>
+              <option value={"Low to High"}>Low To High</option>
+            </select>
+
+            <TicketList
+              tickets={sortedTickets}
+              dispatch={dispatch}
+            ></TicketList>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;
